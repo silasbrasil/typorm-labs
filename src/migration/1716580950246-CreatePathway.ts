@@ -5,7 +5,7 @@ export class CreatePathway1716580950246 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "Pathway",
+        name: "pathway",
         columns: [
           {
             name: "id",
@@ -27,7 +27,7 @@ export class CreatePathway1716580950246 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-
+    await queryRunner.dropTable("pathway");
   }
 
 }

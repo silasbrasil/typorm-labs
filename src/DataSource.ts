@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { Student, Course } from "./entities";
-import { Init1716330204728 } from "./migration/1716330204728-Init";
+import { Student, Course, Pathway } from "./entities";
+import { Init1716330204728, CreatePathway1716580950246 } from "./migration";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -12,8 +12,8 @@ export const AppDataSource = new DataSource({
   database: "labs",
   synchronize: false,
   logging: false,
-  entities: [Student, Course],
-  migrations: [Init1716330204728],
+  entities: [Student, Course, Pathway],
+  migrations: [Init1716330204728, CreatePathway1716580950246],
   subscribers: [],
 })
 
